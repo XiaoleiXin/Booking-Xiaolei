@@ -1,5 +1,6 @@
 
 .app {
+  position: fixed;
   width: 370px;
   min-height: 390px;
   height: auto;
@@ -67,7 +68,7 @@
 
 #collapse {
   position: absolute;
-  top: 116px;
+  top: 251px;
   z-index: 1;
   width: 331px;
   border-top-style: solid;
@@ -91,6 +92,7 @@
 }
 
 #wont {
+
   font-size: 12px;
   font-weight: 500;
   text-align: center;
@@ -163,4 +165,28 @@
 #summary {
   margin-top: 15px;
   margin-bottom: 30px;
+}
+
+.numbers {
+  float: right;
+}
+
+#space {
+  margin-top: 15px;
+  color: white;
+}
+
+.line {
+  border-bottom-style: solid;
+  border-color: #DDDDDD;
+  border-width: 1px;
+  padding-bottom: 10px;
+  padding-top: 9px;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+#total {
+  border-style: none;
+  font-weight: 600;
 }

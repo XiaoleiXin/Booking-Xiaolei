@@ -26,7 +26,6 @@ class App extends React.Component {
       <div>
         <div className="app">
           <Price />
-          <Calendar />
           <Guests />
         </div>
       </div>

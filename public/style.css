@@ -190,3 +190,8 @@
   border-style: none;
   font-weight: 600;
 }
+
+#arrow {
+  float: right;
+  margin-top: 4px;
+}

@@ -1,13 +1,12 @@
 import React from 'react';
 import $ from 'jquery';
 import Calendar from './calendar.jsx';
-import { Collapse, Well } from 'react-bootstrap';
+import { Collapse, Well, Glyphicon } from 'react-bootstrap';
 
 class Guests extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      limit: 5,
       adults: 1,
       children: 0,
       infants: 0,
@@ -18,9 +17,7 @@ class Guests extends React.Component {
       infantsAddStatus: false,
       infantsRemoveStatus: true,
       open: false,
-      price: 205,
       days: null,
-      cleaning: 30,
     };
   }
 
@@ -35,7 +32,7 @@ class Guests extends React.Component {
     if (children > 0) {
       this.setState({ childrenRemoveStatus: false });
     }
-    if (adults + children >= this.state.limit) {
+    if (adults + children >= this.props.info.guests) {
       this.setState({ adultAddStatus: true, childrenAddStatus: true });
       if (adults === 1) {
         this.setState({ adultRemoveStatus: true, childrenRemoveStatus: false });
@@ -58,7 +55,7 @@ class Guests extends React.Component {
     if (children < 1) {
       this.setState({ childrenAddStatus: false, childrenRemoveStatus: true });
     }
-    if (adults + children < this.state.limit) {
+    if (adults + children < this.props.info.guests) {
       this.setState({ adultAddStatus: false, childrenAddStatus: false });
     }
     if (this.state.infants < 2) {
@@ -112,9 +109,9 @@ class Guests extends React.Component {
   }
 
   render() {
-    const totalPrice = this.state.price * this.state.days;
+    const totalPrice = this.props.info.price * this.state.days;
     const serviceFee = Math.floor(totalPrice * 0.09);
-    const cleaningFee = this.state.cleaning;
+    const cleaningFee = this.props.info.cleaning;
     const total = totalPrice + serviceFee + cleaningFee;
     const totalGuests = this.state.adults + this.state.children;
     const totalPeople = this.state.infants ? `${totalGuests} guests, ${this.state.infants} infants` : `${totalGuests} guests`;
@@ -125,6 +122,7 @@ class Guests extends React.Component {
           <span id="wordGuests" >Guests</span>
           <button type="button" id="guestButton" className="btn btn-Primary btn-block" onClick={() => this.setState({ open: !this.state.open })}>
             {totalPeople}
+            {this.state.open ? <Glyphicon glyph="menu-up" id="arrow" /> : <Glyphicon glyph="menu-down" id="arrow" />}
           </button>
           <Collapse id="collapse" in={this.state.open}>
             <div>
@@ -149,14 +147,14 @@ class Guests extends React.Component {
                   <button className="btn btn-circle btn-lg am" type="button" onClick={() => this.removeInfants()} disabled={this.state.infantsRemoveStatus}>-</button>
                   <p id="under">Under 2</p>
                 </div>
-                <div id="limit">5 guests maximum. Infants don’t count toward the number of guests.</div>
+                <div id="limit">{this.props.info.guests} guests maximum. Infants don’t count toward the number of guests.</div>
                 <a href="#;" id="close" onClick={() => this.setState({ open: !this.state.open })}>Close</a>
               </Well>
             </div>
           </Collapse>
           {this.state.days ?
             <div id="summary" >
-              <div className="line">${this.state.price} x {this.state.days} night
+              <div className="line">${this.props.info.price} x {this.state.days} night
                 <span className="numbers">${totalPrice}</span>
               </div>
               <div className="line">Cleaning fee

@@ -7,13 +7,25 @@ import Guests from './components/guests.jsx';
 import Calendar from './components/calendar.jsx';
 import 'react-dates/lib/css/_datepicker.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
       guests: true,
+      data: [{}],
     };
+  }
+
+  componentDidMount() {
+    this.fetchInfo();
+  }
+
+  fetchInfo() {
+    axios.get('/info/2')
+      .then((response) => this.setState({ data: response.data }))
+      .catch((err) => console.log('err on fetchInfo', err));
   }
 
   showGuests() {
@@ -25,8 +37,8 @@ class App extends React.Component {
     return (
       <div>
         <div className="app">
-          <Price />
-          <Guests />
+          <Price info={this.state.data[0]} />
+          <Guests info={this.state.data[0]} />
         </div>
       </div>
     );

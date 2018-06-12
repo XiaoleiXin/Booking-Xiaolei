@@ -21,9 +21,10 @@ class Calendar extends React.Component {
   }
 
   fetchInfo() {
-    axios.get('/dates/2')
-      .then((response) => this.setState({ data: response.data }))
-      .catch((err) => console.log('err on fetchInfo', err));
+    const endPoint = window.location.pathname.slice(6);
+    axios.get(`/dates/${endPoint}`)
+      .then(response => this.setState({ data: response.data }))
+      .catch(err => console.log('err on fetchDates', err));
   }
 
   handle(startDate, endDate) {

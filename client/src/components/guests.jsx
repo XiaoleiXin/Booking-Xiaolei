@@ -131,20 +131,20 @@ class Guests extends React.Component {
                   <div id="adults">Adults</div>
                   <button id="adultsbutton" className="btn btn-circle btn-lg am" type="button" onClick={() => this.addAdults()} disabled={this.state.adultAddStatus}>+</button>
                   <span id="adultsletters" className="am">{this.state.adults}</span>
-                  <button id="adultsbutton" className="btn btn-circle btn-lg am" type="button" onClick={() => this.removeAdults()} disabled={this.state.adultRemoveStatus}>-</button>
+                  <button id="adultsbutton" className="btn btn-circle btn-lg am" type="button" onClick={() => this.removeAdults()} disabled={this.state.adultRemoveStatus}>_</button>
                 </div>
                 <div className="guests">
                   <span>Children</span>
                   <button className="btn btn-circle btn-lg am" type="button" onClick={() => this.addChildren()} disabled={this.state.childrenAddStatus}>+</button>
                   <span id="amletters" className="am">{this.state.children}</span>
-                  <button className="btn btn-circle btn-lg am" type="button" onClick={() => this.removeChildren()} disabled={this.state.childrenRemoveStatus}>-</button>
+                  <button className="btn btn-circle btn-lg am" type="button" onClick={() => this.removeChildren()} disabled={this.state.childrenRemoveStatus}>_</button>
                   <p id="under">Ages 2 - 12</p>
                 </div>
                 <div className="guests">
                   <span>Infants</span>
                   <button className="btn btn-circle btn-lg am" type="button" onClick={() => this.addInfants()} disabled={this.state.infantsAddStatus}>+</button>
                   <span id="amletters" className="am">{this.state.infants}</span>
-                  <button className="btn btn-circle btn-lg am" type="button" onClick={() => this.removeInfants()} disabled={this.state.infantsRemoveStatus}>-</button>
+                  <button className="btn btn-circle btn-lg am" type="button" onClick={() => this.removeInfants()} disabled={this.state.infantsRemoveStatus}>_</button>
                   <p id="under">Under 2</p>
                 </div>
                 <div id="limit">{this.props.info.guests} guests maximum. Infants don’t count toward the number of guests.</div>

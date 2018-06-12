@@ -1,12 +1,29 @@
 
 .app {
-  position: fixed;
   width: 370px;
   min-height: 390px;
   height: auto;
-  margin:80px;
+  margin: 80px;
   padding: 15px 20px 20px 16px;
   border-style: solid;
+  border-radius: 1px;
+  border-width: 1px;
+  border-color: #DDDDDD;
+  font-family: 'Shift', sans-serif;
+}
+
+#app {
+  position:sticky;
+  top:30px; 
+}
+
+.bottomapp {
+  position: sticky;
+  top: 20px;
+  width: 370px;
+  min-height: 390px;
+  height: auto;
+  padding: 15px 20px 20px 16px;
   border-radius: 1px;
   border-width: 1px;
   border-color: #DDDDDD;
@@ -16,10 +33,10 @@
 .btn-circle.btn-lg {
   width: 35px;
   height: 35px;
-  padding: 4px 16px 16px 11px;
   font-size: 17px;
   font-weight: 300;
   line-height: 1.33;
+  padding: 4px 16px 16px 11px;
   border-radius: 90%;
   border-style: solid;
   margin-top: 5px;
@@ -70,7 +87,7 @@
   position: absolute;
   top: 251px;
   z-index: 1;
-  width: 331px;
+  width: 333px;
   border-top-style: solid;
   border-color: rgb(29, 129, 107);
   border-width: 2px;
@@ -80,6 +97,32 @@
   height: 50px;
   background: rgb(250, 84, 84);
   font-size: 16px;
+}
+
+.bottombook {
+  position: fixed;
+  bottom: -10px;
+  width: 100%;
+  border-top: 1px solid #DDDDDD;
+  z-index: 10;
+  background-color: #ffffff;
+}
+
+#bottombookbutton {
+  position: relative;
+  top: -30px;
+  height: 50px;
+  width: 200px;
+  background: rgb(250, 84, 84);
+  font-size: 16px;
+  float: right;
+  margin-right: 20%;
+}
+
+.bottomprice {
+  position: relative;
+  top: 12px;
+  margin-left: 20%;
 }
 
 #guestButton {
@@ -194,4 +237,48 @@
 #arrow {
   float: right;
   margin-top: 4px;
+}
+
+@media screen and (max-width: 769px) {
+  .bottomapp {
+    position: sticky;
+    top: 20px;
+    width: 340px;
+    min-height: 390px;
+    height: auto;
+    padding: 15px 20px 20px 16px;
+    border-radius: 1px;
+    border-width: 1px;
+    border-color: #DDDDDD;
+    font-family: 'Shift', sans-serif;
+  }
+}
+
+@media screen and (max-width: 1123px) {
+  .app {
+    display: none;
+  }
+}
+@media screen and (min-width: 1124px) {
+  .bottombook {
+    display: none;
+  }
+}
+
+.modal-container {
+  position: fixed;
+  width: 370px;
+  left: 5px;
+  right: 0px;
+  height: auto;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: auto;
+}
+.modal-container .modal, .modal-container .modal-backdrop {
+  position: absolute;
+}
+
+#modalButton {
+  border-style: none;
 }

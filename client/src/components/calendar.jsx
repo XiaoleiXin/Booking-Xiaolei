@@ -1,7 +1,6 @@
 import React from 'react';
-import $ from 'jquery';
 import dateArray from 'moment-array-dates';
-import { DateRangePickerWrapper , DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
+import { DateRangePicker } from 'react-dates';
 import moment from 'moment';
 import axios from 'axios';
 
@@ -14,6 +13,7 @@ class Calendar extends React.Component {
       endDates: null,
       data: [moment('2018-07-02')],
     };
+    this.isDayBlocked = this.isDayBlocked.bind(this)
   }
 
   componentDidMount() {
@@ -35,14 +35,15 @@ class Calendar extends React.Component {
     const days = diffDuration.days();
     this.props.setTotalDays(days);
     if (endDate && startDate) {
-      console.log(dateArray.range(startDate, endDate, 'YYYY-MM-DD', true));
+      const selectDays = dateArray.range(startDate, endDate, 'YYYY-MM-DD', true);
+      this.props.setSelectDays(selectDays);
     }
   }
 
   isDayBlocked(day) {
     const BAD_DATES = [];
     for (let i = 0; i < this.state.data.length; i++) {
-      let date = new Date(this.state.data[i].dates);
+      const date = new Date(this.state.data[i].dates);
       date.setDate(date.getDate() + 1);
       BAD_DATES.push(moment(date));
     }
@@ -63,11 +64,11 @@ class Calendar extends React.Component {
           focusedInput={this.state.focusedInput}
           onDatesChange={({ startDate, endDate }) => { this.setState({ startDates: startDate, endDates: endDate }); this.handle(startDate, endDate); }}
           onFocusChange={focusedInput => this.setState({ focusedInput })}
-          minimumNights = {3}
-          isDayBlocked={ this.isDayBlocked.bind(this) }
+          minimumNights = {this.props.minimumNights}
+          isDayBlocked={this.isDayBlocked}
           numberOfMonths={1}
           showClearDates
-          regular
+          block
         />
       </div>
     );

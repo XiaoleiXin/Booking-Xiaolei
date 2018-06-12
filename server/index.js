@@ -21,6 +21,20 @@ app.get('/info/:id', (req, res) => {
     .catch(err => console.log('err from book', err));
 });
 
+app.post('/dates/:id', (req, res) => {
+  const { id } = req.params;
+  const { date } = req.body;
+  let total = 0;
+  for (let i = 0; i < date.length; i++) {
+    db.postDates(id, date[i]).then((data) => {
+      total += 1;   
+      if (total === date.length) {
+        res.send('success');
+    }})
+      .catch(err => console.log('err on post server', err));
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });

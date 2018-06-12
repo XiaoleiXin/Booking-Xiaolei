@@ -1,5 +1,5 @@
 import React from 'react';
-import { Collapse, Well, Modal } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import 'react-dates/initialize'
 import BookingModule from './BookingModule.jsx';
 import Price from './price.jsx';
@@ -15,9 +15,11 @@ class App extends React.Component {
     this.state = {
       data: [{}],
       show: false,
+      open: false,
     };
     this.handleHide = this.handleHide.bind(this);
-}
+    this.handleSuccess = this.handleSuccess.bind(this);
+  }
 
   componentDidMount() {
     this.fetchInfo();
@@ -31,17 +33,21 @@ class App extends React.Component {
   }
 
   handleHide() {
-    this.setState({ show: false });
+    this.setState({ show: false, open: false });
   }
 
   handleShow() {
     this.setState({ show: true });
   }
 
+  handleSuccess() {
+    this.setState({ show: false, open: true });
+  }
+
   render() {
     return (
       <div>
-        <BookingModule data={this.state.data[0]} />
+        <BookingModule data={this.state.data[0]} handleSuccess={this.handleSuccess} />
         <div className="bottombook">
           <div className="bottomprice">
             <span id="price">${this.state.data[0].price}</span>
@@ -64,13 +70,19 @@ class App extends React.Component {
           container={this}
           className="modal-container"
         >
-          <div id="modalButton">
-            <button type="button" className="btn btn-circle" onClick={() => this.setState({ show: false })}>X</button>
-          </div>
           <div className="bottomapp" >
             <Price info={this.state.data[0]} />
-            <Guests info={this.state.data[0]} />
+            <Guests info={this.state.data[0]} handleSuccess={this.handleSuccess} />
           </div>
+        </Modal>
+        <Modal
+          id="success"
+          show={this.state.open}
+          onHide={this.handleHide}
+          container={this}
+          className="modal-container"
+        >
+          <p>Booking Success!</p>
         </Modal>
       </div>
     );

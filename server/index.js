@@ -11,7 +11,6 @@ app.use('/:id', express.static(__dirname + '/../public'));
 
 app.get('/dates/:id', (req, res) => {
   const { id } = req.params;
-  console.log(id)
   db.getBookedDates(id).then((data) => { res.send(data); })
     .catch(err => console.log('err from book', err));
 });

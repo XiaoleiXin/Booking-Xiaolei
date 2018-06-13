@@ -1,4 +1,4 @@
 module.exports = {
-  user: 'root', 
-  database: 'booking'
+  user: 'root',
+  database: 'booking',
 };

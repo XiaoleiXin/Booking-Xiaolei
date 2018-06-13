@@ -24,8 +24,8 @@ class Calendar extends React.Component {
   }
 
   fetchInfo() {
-    const endPoint = window.location.pathname.slice(6);
-    axios.get(`/dates/${endPoint}`)
+    const endPoint = window.location.pathname;
+    axios.get(`/dates${endPoint}`)
       .then(response => this.setState({ data: response.data }))
       .catch(err => console.log('err on fetchDates', err));
   }

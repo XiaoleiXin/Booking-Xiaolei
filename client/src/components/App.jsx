@@ -25,8 +25,8 @@ class App extends React.Component {
   }
 
   fetchInfo() {
-    const endPoint = window.location.pathname.slice(6);
-    axios.get(`/info/${endPoint}`)
+    const endPoint = window.location.pathname;
+    axios.get(`/info${endPoint}`)
       .then(response => this.setState({ data: response.data }))
       .catch(err => console.log('err on fetchInfo', err));
   }

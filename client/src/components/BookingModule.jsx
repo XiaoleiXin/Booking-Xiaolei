@@ -23,7 +23,7 @@ class BookingModule extends React.Component {
       <div>
         <div className="app" >
           <Price info={this.props.data} />
-          <Guests info={this.props.data} />
+          <Guests info={this.props.data} handleSuccess={this.props.handleSuccess}/>
         </div>
       </div>
     );

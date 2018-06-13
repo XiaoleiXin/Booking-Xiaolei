@@ -1,6 +1,6 @@
 
 .app {
-  width: 370px;
+  width: 390px;
   min-height: 390px;
   height: auto;
   margin: 80px;
@@ -9,25 +9,22 @@
   border-radius: 1px;
   border-width: 1px;
   border-color: #DDDDDD;
-  font-family: 'Shift', sans-serif;
 }
 
 #app {
   position:sticky;
   top:30px; 
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
 }
 
 .bottomapp {
-  position: sticky;
-  top: 20px;
-  width: 370px;
+  width: 390px;
   min-height: 390px;
   height: auto;
   padding: 15px 20px 20px 16px;
   border-radius: 1px;
   border-width: 1px;
   border-color: #DDDDDD;
-  font-family: 'Shift', sans-serif;
 }
 
 .btn-circle.btn-lg {
@@ -87,7 +84,7 @@
   position: absolute;
   top: 251px;
   z-index: 1;
-  width: 333px;
+  width: 352px;
   border-top-style: solid;
   border-color: rgb(29, 129, 107);
   border-width: 2px;
@@ -152,7 +149,7 @@
 }
 
 .adults {
-  margin: 2px 0px 35px -5px;
+  margin: 2px 1.5px 35px -5px;
   font-weight: 500;
   font-size: 18px;
 }
@@ -215,8 +212,7 @@
 }
 
 #space {
-  margin-top: 15px;
-  color: white;
+  margin-top: 35px;
 }
 
 .line {
@@ -241,16 +237,22 @@
 
 @media screen and (max-width: 769px) {
   .bottomapp {
-    position: sticky;
-    top: 20px;
-    width: 340px;
+    width: 370px;
     min-height: 390px;
     height: auto;
     padding: 15px 20px 20px 16px;
     border-radius: 1px;
     border-width: 1px;
     border-color: #DDDDDD;
-    font-family: 'Shift', sans-serif;
+  }
+  #collapse {
+    position: absolute;
+    top: 251px;
+    z-index: 1;
+    width: 331px;
+    border-top-style: solid;
+    border-color: rgb(29, 129, 107);
+    border-width: 2px;
   }
 }
 
@@ -267,18 +269,28 @@
 
 .modal-container {
   position: fixed;
-  width: 370px;
+  width: 388px;
   left: 5px;
   right: 0px;
   height: auto;
   margin-left:auto;
   margin-right:auto;
   margin-top: auto;
+  border-style: none;
 }
+
 .modal-container .modal, .modal-container .modal-backdrop {
   position: absolute;
 }
 
-#modalButton {
-  border-style: none;
-}
+#success {
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-size: 30px;
+  text-align: center;
+  width: auto;
+  height: auto;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: auto;
+  background: rgba(255, 255, 255, 0.86);
+} 

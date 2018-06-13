@@ -1,5 +1,4 @@
 import React from 'react';
-import $ from 'jquery';
 import StarRatings from 'react-star-ratings';
 
 const Price = ({ info }) => (

@@ -1,11 +1,12 @@
 import React from 'react';
 import StarRatings from 'react-star-ratings';
+import style from '../style.css';
 
 const Price = ({ info }) => (
   <div>
-    <div className="price">
+    <div className={style.price}>
       <div>
-        <span id="price">${info.price}</span>
+        <span id={style.price}>${info.price}</span>
         <span> per night</span>
       </div>
       <StarRatings

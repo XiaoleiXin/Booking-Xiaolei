@@ -1,13 +1,12 @@
 import React from 'react';
-import { Modal } from 'react-bootstrap';
-import 'react-dates/initialize'
-import BookingModule from './BookingModule.jsx';
-import Price from './price.jsx';
-import Guests from './guests.jsx';
-import 'react-dates/lib/css/_datepicker.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import StarRatings from 'react-star-ratings';
+import { Modal } from 'react-bootstrap';
+import 'react-dates/initialize';
+import Price from './price.jsx';
+import Guests from './guests.jsx';
+import style from '../style.css';
+import BookingModule from './BookingModule.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -48,9 +47,9 @@ class App extends React.Component {
     return (
       <div>
         <BookingModule data={this.state.data[0]} handleSuccess={this.handleSuccess} />
-        <div className="bottombook">
-          <div className="bottomprice">
-            <span id="price">${this.state.data[0].price}</span>
+        <div className={style.bottombook}>
+          <div className={style.bottomprice}>
+            <span id={style.price}>${this.state.data[0].price}</span>
             <span> per night</span>
             <div>
               <StarRatings
@@ -62,25 +61,25 @@ class App extends React.Component {
               {this.state.data[0].reviews}
             </div>
           </div>
-          <button type="button" id="bottombookbutton" onClick={() => this.handleShow()}className="btn btn-Primary btn-danger">Request to Book</button>
+          <button type="button" id={style.bottombookbutton} onClick={() => this.handleShow()} className="btn btn-Primary btn-danger">Request to Book</button>
         </div>
         <Modal
           show={this.state.show}
           onHide={this.handleHide}
           container={this}
-          className="modal-container"
+          className={style.modalcontainer}
         >
-          <div className="bottomapp" >
+          <div className={style.bottomapp} >
             <Price info={this.state.data[0]} />
             <Guests info={this.state.data[0]} handleSuccess={this.handleSuccess} />
           </div>
         </Modal>
         <Modal
-          id="success"
+          id={style.success}
           show={this.state.open}
           onHide={this.handleHide}
           container={this}
-          className="modal-container"
+          className={style.modalcontainer}
         >
           <p>Booking Success!</p>
         </Modal>

@@ -1,4 +1,5 @@
 import React from 'react';
+import style from '../style.css';
 
 const Summary = ({ info, days }) => {
   const totalPrice = info.price * days;
@@ -7,18 +8,18 @@ const Summary = ({ info, days }) => {
   const total = totalPrice + serviceFee + cleaningFee;
 
   return (
-    <div id="summary" >
-      <div className="line">${info.price} x {days} night
-        <span className="numbers">${totalPrice}</span>
+    <div id={style.summary} >
+      <div className={style.line}>${info.price} x {days} night
+        <span className={style.numbers}>${totalPrice}</span>
       </div>
-      <div className="line">Cleaning fee
-        <span className="numbers">${cleaningFee}</span>
+      <div className={style.line}>Cleaning fee
+        <span className={style.numbers}>${cleaningFee}</span>
       </div>
-      <div className="line">Service fee
-        <span className="numbers">${serviceFee}</span>
+      <div className={style.line}>Service fee
+        <span className={style.numbers}>${serviceFee}</span>
       </div>
-      <div id="total" className="line">Total
-        <span className="numbers">${total}</span>
+      <div id={style.total} className={style.line}>Total
+        <span className={style.numbers}>${total}</span>
       </div>
     </div>
   );

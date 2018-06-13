@@ -3,6 +3,9 @@ import dateArray from 'moment-array-dates';
 import { DateRangePicker } from 'react-dates';
 import moment from 'moment';
 import axios from 'axios';
+import 'react-dates/lib/css/_datepicker.css';
+import 'react-dates/initialize';
+import style from '../style.css';
 
 class Calendar extends React.Component {
   constructor(props) {
@@ -13,7 +16,7 @@ class Calendar extends React.Component {
       endDates: null,
       data: [moment('2018-07-02')],
     };
-    this.isDayBlocked = this.isDayBlocked.bind(this)
+    this.isDayBlocked = this.isDayBlocked.bind(this);
   }
 
   componentDidMount() {
@@ -52,8 +55,8 @@ class Calendar extends React.Component {
 
   render() {
     return (
-      <div id="calendar">
-        <span id="wordDates" >Dates</span>
+      <div id={style.calendar}>
+        <span id={style.wordDates} >Dates</span>
         <DateRangePicker
           startDatePlaceholderText="Check in"
           startDate={this.state.startDates}
@@ -62,9 +65,12 @@ class Calendar extends React.Component {
           endDate={this.state.endDates}
           endDateId="endDate"
           focusedInput={this.state.focusedInput}
-          onDatesChange={({ startDate, endDate }) => { this.setState({ startDates: startDate, endDates: endDate }); this.handle(startDate, endDate); }}
+          onDatesChange={({ startDate, endDate }) => {
+            this.setState({ startDates: startDate, endDates: endDate });
+            this.handle(startDate, endDate);
+          }}
           onFocusChange={focusedInput => this.setState({ focusedInput })}
-          minimumNights = {this.props.minimumNights}
+          minimumNights={this.props.minimumNights}
           isDayBlocked={this.isDayBlocked}
           numberOfMonths={1}
           showClearDates

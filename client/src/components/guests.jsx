@@ -133,10 +133,6 @@ class Guests extends React.Component {
   }
 
   render() {
-    let popup = 'nothing';
-    if (this.state.open) {
-      popup = `${style.background}`;
-    }
     const totalGuests = this.state.adults + this.state.children;
     const totalPeople = this.state.infants ? `${totalGuests} guests, ${this.state.infants} infants` : `${totalGuests} guests`;
     return (
@@ -151,9 +147,7 @@ class Guests extends React.Component {
           <button type="button" id={style.guestButton} className="btn btn-Primary btn-block" onClick={() => this.setState({ open: !this.state.open })}>
             {totalPeople}
           </button>
-          {this.state.open ? <div 
-            onClick={() => this.setState({ open: false })}
-            onKeyPress={() => {}} id={popup}>
+          {this.state.open ? <div>
             <div id={style.collapse}>
               <Well id={style.well}>
                 <div className={style.adults}>

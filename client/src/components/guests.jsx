@@ -50,7 +50,7 @@ class Guests extends React.Component {
         this.setState({ adultRemoveStatus: false, childrenRemoveStatus: true });
       }
     }
-    if (this.state.infants > -1) {
+    if (this.state.infants > 0) {
       this.setState({ infantsRemoveStatus: false });
       if (this.state.infants > 3) {
         this.setState({ infantsAddStatus: true });
@@ -108,7 +108,12 @@ class Guests extends React.Component {
     let newInfants = this.state.infants;
     newInfants += 1;
     this.setState({ infants: newInfants });
-    this.setAddButtonState();
+    if (this.state.infants > -1) {
+      this.setState({ infantsRemoveStatus: false });
+      if (this.state.infants > 3) {
+        this.setState({ infantsAddStatus: true });
+      }
+    }
   }
 
   removeInfants() {

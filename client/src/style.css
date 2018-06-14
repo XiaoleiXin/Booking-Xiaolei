@@ -42,8 +42,15 @@ button {
 }
 :global(.btn-circle.btn-lg:active) {
   background-color: white;
-  box-shadow: 0 3px rgb(29, 129, 107);
   transform: translateY(0px);
+  box-shadow: rgb(0, 132, 137) 0px 0px 2px 2px;
+}
+:global(.btn-circle.btn-lg:disabled) {
+  cursor: default;
+  border-color: rgba(0, 132, 137, 0.3);
+  background: transparent;
+  box-shadow: none;
+  color: rgba(0, 132, 137, 0.3);
 }
 .price {
   margin: 0px 0px 20px 0px;

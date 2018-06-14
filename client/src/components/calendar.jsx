@@ -3,7 +3,6 @@ import dateArray from 'moment-array-dates';
 import { DateRangePicker } from 'react-dates';
 import moment from 'moment';
 import axios from 'axios';
-import 'react-dates/lib/css/_datepicker.css';
 import 'react-dates/initialize';
 import style from '../style.css';
 

@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import StarRatings from 'react-star-ratings';
 import { Modal } from 'react-bootstrap';
-import 'react-dates/initialize';
 import Price from './price.jsx';
 import Guests from './guests.jsx';
 import style from '../style.css';
@@ -67,7 +66,8 @@ class App extends React.Component {
           show={this.state.show}
           onHide={this.handleHide}
           container={this}
-          className={style.modalcontainer}
+          className="modal-container"
+          id={style.bigpage}
         >
           <div className={style.bottomapp} >
             <Price info={this.state.data[0]} />
@@ -79,7 +79,7 @@ class App extends React.Component {
           show={this.state.open}
           onHide={this.handleHide}
           container={this}
-          className={style.modalcontainer}
+          className="modal-container"
         >
           <p>Booking Success!</p>
         </Modal>

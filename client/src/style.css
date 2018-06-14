@@ -73,10 +73,9 @@ button {
   margin-top: 62px;
 }
 #collapse {
-  position: relative;
+  position: absolute;
   height: 310px;
   top: 253px;
-  left: 97px;
   z-index: 1;
   width: 333.5px;
   border: 1px solid #DDDDDD;

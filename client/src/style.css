@@ -12,11 +12,6 @@ button {
   border-width: 1px;
   border-color: #DDDDDD;
 }
-#app {
-  position:sticky;
-  top:30px; 
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
-}
 .bottomapp {
   width: 370px;
   min-height: 390px;

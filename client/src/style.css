@@ -1,6 +1,8 @@
-
+button {
+  outline: none;
+}
 .app {
-  width: 390px;
+  width: 370px;
   min-height: 390px;
   height: auto;
   margin: 80px;
@@ -10,15 +12,13 @@
   border-width: 1px;
   border-color: #DDDDDD;
 }
-
 #app {
   position:sticky;
   top:30px; 
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
 }
-
 .bottomapp {
-  width: 390px;
+  width: 370px;
   min-height: 390px;
   height: auto;
   padding: 15px 20px 20px 16px;
@@ -26,7 +26,6 @@
   border-width: 1px;
   border-color: #DDDDDD;
 }
-
 :global(.btn-circle.btn-lg) {
   width: 35px;
   height: 35px;
@@ -38,11 +37,9 @@
   border-style: solid;
   border-width: 1.2px;
   margin-top: 5px;
-  border-style: solid;
   border-color: rgb(29, 129, 107);
   color: rgb(29, 129, 107);
 }
-
 :global(.btn-circle.btn-lg:active) {
   background-color: white;
   box-shadow: 0 3px rgb(29, 129, 107);
@@ -56,47 +53,48 @@
   padding-bottom: 15px;
   font-size: 12px;
 }
-
 .guests {
-  margin: 0px 0px 30px -5px;
+  margin: 0px 10px 0px 10px;
   font-weight: 500;
   font-size: 18px;
 }
-
 :global(.am) {
   float: right;
 }
-
 #amletters {
   margin: 8px 20px 8px 20px;
 }
-
 .chargeSentence {
   text-align: center;
   font-size: 11px;
   margin: 10px;
 }
-
 .guestModule {
   margin-top: 62px;
 }
-
 #collapse {
-  position: absolute;
-  top: 251px;
+  position: relative;
+  height: 310px;
+  top: 253px;
+  left: 97px;
   z-index: 1;
-  width: 352px;
-  border-top-style: solid;
-  border-color: rgb(29, 129, 107);
-  border-width: 2px;
+  width: 333.5px;
+  border: 1px solid #DDDDDD;
+  border-top-color: rgb(29, 129, 107);
+  border-top-width: 2px;
+  padding-top: 20px;
+  border-radius: 4px;
 }
-
 #book {
   height: 50px;
   background: rgb(250, 84, 84);
   font-size: 16px;
+  border-radius: 3px;
+  width: 334px;
+  border-style: none;
+  color: #ffffff;
+  font-weight: 600;
 }
-
 .bottombook {
   position: fixed;
   bottom: -10px;
@@ -105,7 +103,6 @@
   z-index: 10;
   background-color: #ffffff;
 }
-
 #bottombookbutton {
   position: relative;
   top: -30px;
@@ -114,75 +111,93 @@
   background: rgb(250, 84, 84);
   font-size: 16px;
   float: right;
-  margin-right: 20%;
+  margin-right: 15%;
   border-style: none;
+  color: #ffffff;
+  border-radius: 3px;
+  font-weight: 600;
 }
-
 .bottomprice {
   position: relative;
   top: 12px;
-  margin-left: 20%;
+  margin-left: 15%;
 }
 
 #guestButton {
   border: 1px solid #DDDDDD;
   text-align: left;
-  height: 45px;
+  height: 48px;
   font-size: 18px;
   font-weight: 300;
   border-radius: 0%;
+  width: 334px;
+  border-radius: 2px;
 }
-
 #wont {
 
   font-size: 12px;
   font-weight: 500;
   text-align: center;
 }
-
 #well {
   background: white;
 }
-
 #limit {
   font-size: 14px;
   margin-right: 50px;
+  margin-left: 10px;
   font-weight: 200;
 }
-
 .adults {
-  margin: 2px 0.2px 35px -5px;
+  margin: 2px 10px 35px 5px;
   font-weight: 500;
   font-size: 18px;
 }
-
-#adultsbutton {
+#adultsbuttonplus {
+  position: relative;
+  top: 1px;
   margin-top: -30px;
 }
-
-#adultsletters {
-  margin: -25px 22.5px 8px 20px;
+#adultsbuttonminus {
+  position: absolute;
+  top: 12.7px;
+  left: 197px;
 }
-
+#childrenbuttonminus {
+  position: absolute;
+  top: 81.7px;
+  left: 197px;
+}
+#infantsbuttonminus {
+  position: absolute;
+  top: 150.7px;
+  left: 197px;
+}
+#adultsletters {
+  margin: -25px 22.5px 8px 22px;
+}
+#adultsword {
+  margin-left: 7px;
+}
 #under {
   font-size: 13px;
   font-weight: 200;
+  margin-top: 0px;
+  margin-bottom: 26px;
 }
-
 #wordGuests {
   position: relative;
   top: -3px;
   left: -5px;
   margin-left: 7px;
+  margin-bottom: -1px;
   font-size: 12px;
   font-weight: 500;
 }
-
 #price {
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 22px;
+  font-weight: 700;
 }
-
 #close {
   position: relative;
   left: 262px;
@@ -190,13 +205,11 @@
   font-size: 16px;
   font-weight: 500;
 }
-
 #calendar {
   position: relative;
   top: 25px;
   margin-bottom: -20px;
 }
-
 #wordDates {
   position: absolute;
   top: -20px;
@@ -204,20 +217,16 @@
   font-size: 12px;
   font-weight: 500;
 }
-
 #summary {
   margin-top: 15px;
   margin-bottom: 30px;
 }
-
 .numbers {
   float: right;
 }
-
 #space {
   margin-top: 35px;
 }
-
 .line {
   border-bottom-style: solid;
   border-color: #DDDDDD;
@@ -227,65 +236,49 @@
   font-weight: 300;
   font-size: 14px;
 }
-
 #total {
   border-style: none;
   font-weight: 600;
 }
-
 #arrow {
   float: right;
   margin-top: 4px;
 }
-
-@media screen and (max-width: 769px) {
-  .bottomapp {
-    width: 370px;
-    min-height: 390px;
-    height: auto;
-    padding: 15px 20px 20px 16px;
-    border-radius: 1px;
-    border-width: 1px;
-    border-color: #DDDDDD;
-  }
-  #collapse {
-    position: absolute;
-    top: 251px;
-    z-index: 1;
-    width: 331px;
-    border-top-style: solid;
-    border-color: rgb(29, 129, 107);
-    border-width: 2px;
-  }
+#background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: rgba(255, 255, 255, 0);
 }
-
 @media screen and (max-width: 1123px) {
   .app {
     display: none;
+  }
+  #collapse {
+    position: fixed;
+    height: 310px;
+    top: 253px;
+    left: 17.5px;
+    z-index: 1;
+    width: 333.5px;
+    border: 1px solid #DDDDDD;
+    border-top-color: rgb(29, 129, 107);
+    border-top-width: 2px;
+    padding-top: 20px;
+    border-radius: 4px;
   }
 }
 @media screen and (min-width: 1124px) {
   .bottombook {
     display: none;
   }
+  .bottomapp {
+    display: none;
+  }
 }
-
-.modalcontainer {
-  position: fixed;
-  width: 388px;
-  left: 5px;
-  right: 0px;
-  height: auto;
-  margin-left:auto;
-  margin-right:auto;
-  margin-top: auto;
-  border-style: none;
-}
-
-.modalcontainer .modal, .modalcontainer .modal-backdrop {
-  position: absolute;
-}
-
 #success {
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
   font-size: 30px;

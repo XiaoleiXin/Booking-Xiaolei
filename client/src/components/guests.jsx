@@ -120,9 +120,9 @@ class Guests extends React.Component {
 
   postDates() {
     if (this.state.selectDays) {
-      const endPoint = window.location.pathname.slice(6);
+      const endPoint = window.location.pathname;
       const data = { date: this.state.selectDays };
-      axios.post(`/dates/${endPoint}`, data)
+      axios.post(`/dates${endPoint}`, data)
         .then((response) => {
           this.props.handleSuccess();
           this.setState({ days: null })
@@ -133,6 +133,10 @@ class Guests extends React.Component {
   }
 
   render() {
+    let popup = 'nothing';
+    if (this.state.open) {
+      popup = `${style.background}`;
+    }
     const totalGuests = this.state.adults + this.state.children;
     const totalPeople = this.state.infants ? `${totalGuests} guests, ${this.state.infants} infants` : `${totalGuests} guests`;
     return (
@@ -143,31 +147,33 @@ class Guests extends React.Component {
           minimumNights={this.props.info.minimumNights}
         />
         <div className={style.guestModule}>
-          <span id={style.wordGuests} >Guests</span>
+          <p id={style.wordGuests} >Guests</p>
           <button type="button" id={style.guestButton} className="btn btn-Primary btn-block" onClick={() => this.setState({ open: !this.state.open })}>
             {totalPeople}
           </button>
-          {this.state.open ? <div id={style.collapse}>
-            <div>
+          {this.state.open ? <div 
+            onClick={() => this.setState({ open: false })}
+            onKeyPress={() => {}} id={popup}>
+            <div id={style.collapse}>
               <Well id={style.well}>
                 <div className={style.adults}>
-                  <div id={style.adults}>Adults</div>
-                  <button id={style.adultsbutton} className="btn btn-circle btn-lg am" type="button" onClick={() => this.addAdults()} disabled={this.state.adultAddStatus}>+</button>
+                  <div id={style.adultsword}>Adults</div>
+                  <button id={style.adultsbuttonplus} className="btn btn-circle btn-lg am" type="button" onClick={() => this.addAdults()} disabled={this.state.adultAddStatus}>+</button>
                   <span id={style.adultsletters} className="am">{this.state.adults}</span>
-                  <button id={style.adultsbutton} className="btn btn-circle btn-lg am" type="button" onClick={() => this.removeAdults()} disabled={this.state.adultRemoveStatus}>-</button>
+                  <button id={style.adultsbuttonminus} className="btn btn-circle btn-lg am" type="button" onClick={() => this.removeAdults()} disabled={this.state.adultRemoveStatus}>-</button>
                 </div>
                 <div className={style.guests}>
                   <span>Children</span>
                   <button className="btn btn-circle btn-lg am" type="button" onClick={() => this.addChildren()} disabled={this.state.childrenAddStatus}>+</button>
                   <span id={style.amletters} className="am">{this.state.children}</span>
-                  <button className="btn btn-circle btn-lg am" type="button" onClick={() => this.removeChildren()} disabled={this.state.childrenRemoveStatus}>-</button>
+                  <button id={style.childrenbuttonminus} className="btn btn-circle btn-lg am" type="button" onClick={() => this.removeChildren()} disabled={this.state.childrenRemoveStatus}>-</button>
                   <p id={style.under}>Ages 2 - 12</p>
                 </div>
                 <div className={style.guests}>
                   <span>Infants</span>
                   <button className="btn btn-circle btn-lg am" type="button" onClick={() => this.addInfants()} disabled={this.state.infantsAddStatus}>+</button>
                   <span id={style.amletters} className="am">{this.state.infants}</span>
-                  <button className="btn btn-circle btn-lg am" type="button" onClick={() => this.removeInfants()} disabled={this.state.infantsRemoveStatus}>-</button>
+                  <button id={style.infantsbuttonminus} className="btn btn-circle btn-lg am" type="button" onClick={() => this.removeInfants()} disabled={this.state.infantsRemoveStatus}>-</button>
                   <p id={style.under}>Under 2</p>
                 </div>
                 <div id={style.limit}>

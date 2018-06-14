@@ -1,5 +1,4 @@
 import React from 'react';
-import 'react-dates/initialize';
 import Price from './price.jsx';
 import Guests from './guests.jsx';
 import style from '../style.css';

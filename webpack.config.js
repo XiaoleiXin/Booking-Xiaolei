@@ -6,7 +6,7 @@ const DIST_DIR = path.join(__dirname, '/public');
 module.exports = {
   entry: `${SRC_DIR}/index.jsx`,
   output: {
-    filename: 'bundle.js',
+    filename: 'bookingBundle.js',
     path: DIST_DIR,
   },
   devtool: '#source-map',
@@ -24,6 +24,13 @@ module.exports = {
       {
         test: /\.css$/,
         loader: 'style-loader!css-loader?modules&localIdentName=[path][name]---[local]---[hash:base64:5]'
+      },
+      {
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+        },
       },
     ],
   },

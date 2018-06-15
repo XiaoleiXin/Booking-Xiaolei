@@ -1,3 +1,6 @@
+body {
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 button {
   outline: none;
 }
@@ -77,7 +80,7 @@ button {
 #collapse {
   position: absolute;
   height: 310px;
-  top: 333px;
+  top: 330px;
   z-index: 1;
   width: 333.5px;
   border: 1px solid #DDDDDD;
@@ -261,7 +264,7 @@ button {
   #collapse {
     position: fixed;
     height: 310px;
-    top: 253px;
+    top: 249px;
     left: 17.5px;
     z-index: 1;
     width: 333.5px;

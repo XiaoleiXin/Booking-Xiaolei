@@ -37,6 +37,7 @@ button {
   margin-top: 5px;
   border-color: rgb(29, 129, 107);
   color: rgb(29, 129, 107);
+  background: #ffffff;
 }
 :global(.btn-circle.btn-lg:active) {
   background-color: white;
@@ -136,6 +137,7 @@ button {
   border-radius: 0%;
   width: 334px;
   border-radius: 2px;
+  background: #ffffff;
 }
 #wont {
 

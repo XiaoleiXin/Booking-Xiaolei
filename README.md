@@ -8,7 +8,7 @@
 
 [![👉 Watch the video](https://media.giphy.com/media/2scmhVtxeTbb5dnej1/giphy.gif)](https://www.youtube.com/watch?v=ZaMoZ0U07QY)
 
-### Usage
+## Usage
 - Built stateful React components with CSS modules to deliver modular UI with separation of concerns
 
 - Converted booking module as a bottom bar when zooming out web page and showed up as a modal with CSS
@@ -17,7 +17,7 @@
 
 - Managed team Agile Workflow through Trello ticketing system to ensure non-conflicting goals
 
-#### Built With
+## Built With
 
 React 
 

@@ -4,9 +4,9 @@
 
 ## Demo
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
 👉 Watch [Demo Video](https://www.youtube.com/watch?v=ZaMoZ0U07QY)
+
+[![👉 Watch the video](https://media.giphy.com/media/2scmhVtxeTbb5dnej1/giphy.gif)](https://www.youtube.com/watch?v=ZaMoZ0U07QY)
 
 ### Built With
 

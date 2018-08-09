@@ -10,9 +10,12 @@
 
 ### Built With
 
-React - The web framework used \n
+React - The web framework used
+
 Node.js - The server
+
 MySQL - SQL Database
+
 NPM - Dependency Management
 
 

@@ -1,39 +1,18 @@
-# Project Name
+# AirFecBnB : Booking Module
 
-> Project description
+> Web Application for Booking Accommodations 
 
-## Related Projects
-
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-
-## Table of Contents
-
-1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
-
-## Usage
-
-> Some usage instructions
-
-## Requirements
+## Demo
 
 An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
-- Node 6.13.0
-- etc
+👉 Watch [Demo Video](https://www.youtube.com/watch?v=ZaMoZ0U07QY)
 
-## Development
+### Built With
 
-### Installing Dependencies
+React - The web framework used
+Node.js - The server
+MySQL - SQL Database
+NPM - Dependency Management
 
-From within the root directory:
-
-```sh
-npm install -g webpack
-npm install
-```
 
